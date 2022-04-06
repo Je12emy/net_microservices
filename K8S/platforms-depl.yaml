@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: platforms-depl
+spec:
+  replicas: 1
+  selector: # Selects the template we are going to use for the deployment
+    matchLabels:
+      app: platformservice 
+  template: # In here we define the pod and container we are going to use
+    metadata:
+      labels:
+        app: platformservice
+    spec:
+      containers:
+        - name: platformservice
+          image: je12emy/platformservice:latest
