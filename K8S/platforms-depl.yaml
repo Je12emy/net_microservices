@@ -6,12 +6,12 @@ spec:
   replicas: 1
   selector: # Selects the template we are going to use for the deployment
     matchLabels:
-      app: platformService 
+      app: platformservice 
   template: # In here we define the pod and container we are going to use
     metadata:
       labels:
-        app: platformService
+        app: platformservice
     spec:
       containers:
         - name: platformservice
-          image:je12emy/platformservice:latest
+          image: je12emy/platformservice:latest
